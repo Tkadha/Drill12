@@ -203,3 +203,6 @@ class Boy:
     def handle_collision(self,group,other):
         if group =='boy:ball':  # 공과 충돌
             self.ball_count+=1
+
+        if group =='boy:zombie':
+            quit(0)

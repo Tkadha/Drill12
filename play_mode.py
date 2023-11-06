@@ -46,6 +46,20 @@ def init():
         game_world.add_collision_pair('boy:ball', None, ball)
 
 
+
+    zombies = [Zombie() for _ in range(5)]
+    game_world.add_objects(zombies, 1)
+
+    for zombie in zombies:
+        game_world.add_collision_pair('zombie:ball', zombie, None)  # zombie 등록
+    for ball in balls:
+        game_world.add_collision_pair('zombie:ball', None, ball)
+
+    game_world.add_collision_pair('boy:zombie', boy, None) # boy 등록
+    for zombie in zombies:
+        game_world.add_collision_pair('boy:zombie', None, zombie)  # zombie 등록
+
+
 def finish():
     game_world.clear()
     pass
